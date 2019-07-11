@@ -44,42 +44,64 @@
 %input{Folder/documentname.tex} % ファイルをインポート
 
 \subsection{使い方}
-\begin{itemize}
-    \item このテンプレートには各種設定や基本的なコマンドの使い方などが含まれます
-    \item 不要な部分は削除してお使いください
-    \item やる気がある限り順次更新されていくと思います
-\end{itemize}
+  \begin{itemize}
+      \item このテンプレートには各種設定や基本的なコマンドの使い方などが含まれます
+      \item 不要な部分は削除してお使いください
+      \item やる気がある限り順次更新されていくと思います
+  \end{itemize}
 
 図はPDF形式で貼りましょう．図\ref{fig:sample}はサンプル画像です．
 
-% 図を貼る
-\begin{figure}[h]   % h: この場所に t: ページのトップに b: ページのボトムに p: 新しいページを作って画像を貼る
-    \centering              % 中央揃え
-    \includegraphics[width=60truemm,clip]{Images/graph_sample.pdf}
-    \caption{Sample Picture}% 図のタイトル（英語）
-    \label{fig:sample}      % 参照用ラベル
-\end{figure}
+  % 図を貼る
+  \begin{figure}[h]   % h: この場所に t: ページのトップに b: ページのボトムに p: 新しいページを作って画像を貼る
+      \centering              % 中央揃え
+      \includegraphics[width=60truemm,clip]{Images/graph_sample.pdf}
+      \caption{Sample Picture}% 図のタイトル（英語）
+      \label{fig:sample}      % 参照用ラベル
+  \end{figure}
 
-% 横に並べて図を貼る（自動改行を防ぐためにtabularを使う）
-\begin{figure}[h]
-  \begin{center}    % 中央揃え
-    \begin{tabular}{c}
-      \begin{minipage}{.45\linewidth}   % 左側の図
-      \centering
-      \includegraphics[width=60truemm,clip]{Images/graph_sample.pdf}
-      \caption{Sample Picture(Left side)} % 図のタイトル（英語）
-      \label{fig:sample_l}                % 参照用ラベル
-      \end{minipage}
-      
-      \begin{minipage}{.45\linewidth}   % 右側の図
-      \centering
-      \includegraphics[width=60truemm,clip]{Images/graph_sample.pdf}
-      \caption{Sample Picture(Right side)}% 図のタイトル（英語）
-      \label{fig:sample_r}                % 参照用ラベル
-      \end{minipage}
-    \end{tabular}
-  \end{center}
-\end{figure}
+  % 横に並べて図を貼る（自動改行を防ぐためにtabularを使う）
+  \begin{figure}[h]
+    \begin{center}    % 中央揃え
+      \begin{tabular}{c}
+        \begin{minipage}{.45\linewidth}   % 左側の図
+        \centering
+        \includegraphics[width=60truemm,clip]{Images/graph_sample.pdf}
+        \caption{Sample Picture(Left side)} % 図のタイトル（英語）
+        \label{fig:sample_l}                % 参照用ラベル
+        \end{minipage}
+        
+        \begin{minipage}{.45\linewidth}   % 右側の図
+        \centering
+        \includegraphics[width=60truemm,clip]{Images/graph_sample.pdf}
+        \caption{Sample Picture(Right side)}% 図のタイトル（英語）
+        \label{fig:sample_r}                % 参照用ラベル
+        \end{minipage}
+      \end{tabular}
+    \end{center}
+  \end{figure}
+
+  % 表を書く
+  \begin{table}[h]
+    \begin{center}
+      \caption{表のサンプル}
+      \begin{tabular}{|c||c|c|c|c|} \hline
+        $i$ & $a_{i}$ & $\alpha_{i}$  & $d_{i}$  & $\theta_{i}$             \\ \hline \hline
+         1  &    0    &       0       &    0     & $\theta_{1}$             \\ \hline
+         2  &    0    & $-90^{\circ}$ &    0     & $\theta_{2}$             \\ \hline
+         3  & $l_{3}$ &       0       &    0     & $\theta_{3}$             \\ \hline
+         4  & $l_{4}$ &       0       &    0     & $\theta_{4}+90^{\circ}$  \\ \hline
+         5  &    0    & $-90^{\circ}$ &    0     & $\theta_{5}$             \\ \hline
+         6  &    0    &       0       & $-l_{5}$ &    0                     \\ \hline
+      \end{tabular}
+      \label{tab:dhparameter}
+    \end{center}
+  \end{table}
+
+% 数式を書く
+  \begin{equation}
+  {}^0\!T_{1}=\begin{pmatrix} C_{1} & -S_{1} & 0 & 0 \\ S_{1} & C_1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
+  \end{equation}
 
 \end{document}
 % --- ドキュメント終了 ---
