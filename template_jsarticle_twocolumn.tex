@@ -1,0 +1,40 @@
+% 自分用LaTeXテンプレート(2段組み)
+% タイプセットはupLaTeX, dvipdfmxを使用，スタイルはjsarticle
+
+\documentclass[uplatex, twocolumn]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{tabularx}   % 表
+\usepackage{layout}     % レイアウト
+
+% ---数式関係---
+\usepackage{amsmath}    % ams math
+\usepackage{bm}         % ボールド
+
+\usepackage{url}    % URLを書くため
+
+%\pagestyle{empty}  % ページ番号消去
+\pagestyle{plain}   % ページ番号表示
+
+% ---レイアウトパラメータ---
+\usepackage[left=20mm,right=20mm,top=20mm,bottom=20mm, includefoot]{geometry}
+
+\def\Vec#1{\mbox{\boldmath $#1$}}   % ベクトル（ボールド）の定義
+
+\renewcommand{\tablename}{Table}    % 表番号フォーマットをTableへ
+\renewcommand{\figurename}{Fig.}    % 図番号フォーマットをFig.へ
+
+\renewcommand{\baselinestretch}{0.8}    % 行間の調整
+
+\title{\Huge タイトル} 
+\author{\huge 書いた人の名前}
+\date{\today}
+
+% ---ドキュメント開始---
+\begin{document}
+  \maketitle  % タイトル生成
+
+  \section{2段組みのサンプル}
+    論文の前刷りとか用．
+\end{document}
+% ---ドキュメント終了---
