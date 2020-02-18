@@ -1,0 +1,59 @@
+% upLaTeXによるBeamerプレゼンテーションスライド
+% 文字コードはUTF-8
+\documentclass[dvipdfmx, 12pt]{beamer}  % dvipdfmxを使う
+\usepackage{bxdpx-beamer}   % dvipdfmxの為に必要
+\usepackage{pxjahyper}      % 日本語で栞を作る為に必要
+\renewcommand{\kanjifamilydefault}{\gtdefault}  % 規定をゴシック体にする
+
+\usetheme{metropolis}
+\usecolortheme{rose}
+
+\title{はじめてのBeamer}
+\author{fjnkt98}
+\date{\today}
+\institute{Centre for Modern Beamer Themes}
+
+\begin{document}
+  \maketitle
+
+  \section{はじめに}
+  \begin{frame}{}
+    \tableofcontents
+  \end{frame}
+
+  \begin{frame}{スライド}
+    これがBeamerスライドだ！
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{はじめてのスライド}
+    \begin{definition}
+      1と自分自身しか約数を持たない数を\alert{素数}という．
+    \end{definition}
+    \begin{example}
+     \begin{itemize}
+      \item 2 は素数．
+      \item 3 も素数．
+      \item 4 は素数ではない．
+     \end{itemize}
+    \end{example}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{箇条書き}
+    \begin{itemize}
+      \item ほげ
+      \item もげ
+      \item うんち！
+    \end{itemize}
+    \begin{block}{ブロック}
+      これはBlockの中身です．
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{ブロック}
+
+  \end{frame}
+
+\end{document}
