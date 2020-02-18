@@ -12,6 +12,7 @@
 \usepackage{bm}         % ボールド
 
 \usepackage{url}    % URLを書くため
+\usepackage{siunitx}    % SI単位を書くため
 
 %\pagestyle{empty}  % ページ番号消去
 \pagestyle{plain}   % ページ番号表示
@@ -55,7 +56,7 @@
   % 図を貼る
   \begin{figure}[h]   % h: この場所に t: ページのトップに b: ページのボトムに p: 新しいページを作って画像を貼る
       \centering              % 中央揃え
-      \includegraphics[width=60truemm,clip]{Images/graph_sample.pdf}
+      \includegraphics[width=60truemm,clip]{images/graph_sample.pdf}
       \caption{Sample Picture}% 図のタイトル（英語）
       \label{fig:sample}      % 参照用ラベル
   \end{figure}
@@ -66,14 +67,14 @@
       \begin{tabular}{c}
         \begin{minipage}{.45\linewidth}   % 左側の図
         \centering
-        \includegraphics[width=60truemm,clip]{Images/graph_sample.pdf}
+        \includegraphics[width=60truemm,clip]{images/graph_sample.pdf}
         \caption{Sample Picture(Left side)} % 図のタイトル（英語）
         \label{fig:sample_l}                % 参照用ラベル
         \end{minipage}
         
         \begin{minipage}{.45\linewidth}   % 右側の図
         \centering
-        \includegraphics[width=60truemm,clip]{Images/graph_sample.pdf}
+        \includegraphics[width=60truemm,clip]{images/graph_sample.pdf}
         \caption{Sample Picture(Right side)}% 図のタイトル（英語）
         \label{fig:sample_r}                % 参照用ラベル
         \end{minipage}
