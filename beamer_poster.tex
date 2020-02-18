@@ -1,0 +1,24 @@
+% upLaTeX, dvipdfmxによるBeamerポスター
+\documentclass[dvipdfmx, final]{beamer}
+\mode<presentation> {
+  \usetheme{Berlin}
+}
+
+% 縦書き，A0サイズ
+\usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
+\usepackage[japanese]{babel}
+
+\title{ポスターのサンプル}
+\author{fjnkt98}
+\institute{NITIC}
+\date{\today}
+
+\begin{document}
+  \begin{columns}
+    \begin{column}{.32\linewidth}
+      \begin{block}{はじめに}
+        \LaTeX でポスター！
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{document}
