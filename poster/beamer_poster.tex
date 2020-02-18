@@ -1,12 +1,9 @@
 % upLaTeX, dvipdfmxによるBeamerポスター
-\documentclass[dvipdfmx, final]{beamer}
-\mode<presentation> {
-  \usetheme{Berlin}
-}
+\documentclass[dvipdfmx, final, t]{beamer}
+\usetheme[footertext={フッター}]{FJNKT98}
 
 % 縦書き，A0サイズ
 \usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
-\usepackage[japanese]{babel}
 
 \title{ポスターのサンプル}
 \author{fjnkt98}
@@ -14,11 +11,13 @@
 \date{\today}
 
 \begin{document}
-  \begin{columns}
+\begin{frame}
+  \begin{columns}[t]
     \begin{column}{.32\linewidth}
       \begin{block}{はじめに}
         \LaTeX でポスター！
       \end{block}
     \end{column}
   \end{columns}
+\end{frame}
 \end{document}
