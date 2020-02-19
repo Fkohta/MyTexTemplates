@@ -2,21 +2,76 @@
 \mode<presentation>
 \DeclareOptionBeamer{footertext}{\def\FJNKT98@footertext{#1}}
 \ProcessOptionsBeamer
+
+
+
+% ===== Color Configuration ===========================
 \selectcolormodel{RGB}
 \definecolor{royalblue}{RGB}{1,72,152}
 \definecolor{aliceblue}{RGB}{240,248,255}
-\setbeamercolor{headline}{fg=white,bg=royalblue}
-\setbeamercolor{footline}{fg=white,bg=royalblue}
+\definecolor{fjndarkgray}{RGB}{75, 84, 88}
+\definecolor{fjnmiddlegray}{RGB}{123, 142, 152}
+\definecolor{fjnlightgray}{RGB}{252, 252, 252}
+
+% ===== Font Configuration ============================
+
+\usefonttheme{professionalfonts}
+
+% ===== Outer Configuration ===========================
+
+% ----- Header ----
+\setbeamercolor{headline}{fg=white,bg=fjndarkgray}
+
 \setbeamercolor{title in headline}{fg=white}
 \setbeamercolor{author in headline}{fg=white}
 \setbeamercolor{institute in headline}{fg=white}
 \setbeamercolor{conference in headline}{fg=white}
-\setbeamercolor*{normal text}{fg=black,bg=white}
-\setbeamercolor*{block body}{fg=black,bg=aliceblue}
-\setbeamercolor*{block title}{fg=white,bg=royalblue}
+
+\setbeamertemplate{headline}{%
+    \leavevmode
+    \begin{beamercolorbox}[wd=\paperwidth]{headline}
+        \centering
+        \vskip5ex
+        \usebeamercolor{title in headline}{%
+            \color{fg}\textbf{\LARGE{\inserttitle}}\\[2.5ex]
+        }
+        \usebeamercolor{author in headline}{%
+            \color{fg}\large{\insertauthor}\\[1.2ex]
+        }
+        \usebeamercolor{institute in headline}{%
+            \color{fg}\large{\insertinstitute}
+        }
+        \vskip5ex
+    \end{beamercolorbox}
+}
+
+% ---- Footer ----
+\setbeamercolor{footline}{fg=white,bg=fjndarkgray}
+
+\setbeamertemplate{footline}{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=11ex]{footline}
+    \leavevmode%
+    \begin{columns}[T]
+        \begin{column}{0.7\paperwidth}
+        \end{column}
+        \begin{column}{0.3\paperwidth}
+            \usebeamercolor{conference in headline}{%
+                \color{fg}\large{\FJNKT98@footertext}
+            }
+        \end{column}
+    \end{columns}
+    \vskip3ex
+    \end{beamercolorbox}
+}
+
+% ===== Inner Configuration ===========================
+
+% ---- Block ----
+\setbeamercolor*{block body}{fg=black,bg=fjnlightgray}
+\setbeamercolor*{block title}{fg=white,bg=fjndarkgray}
+
 \setbeamerfont{block title}{size=\large,series=\bf}
-\setbeamercolor{structure}{fg=red}
-\setbeamertemplate{navigation symbols}{}
+
 \setbeamertemplate{block begin}{%
     \vskip.5ex
     \begin{beamercolorbox}[
@@ -40,35 +95,16 @@
     \end{beamercolorbox}
     \vskip1.5ex
 }
-\setbeamertemplate{headline}{%
-    \leavevmode
-    \begin{beamercolorbox}[wd=\paperwidth]{headline}
-        \centering
-        \vskip4ex
-        \usebeamercolor{title in headline}{%
-            \color{fg}\textbf{\LARGE{\inserttitle}}\\[2.5ex]
-        }
-        \usebeamercolor{author in headline}{%
-            \color{fg}\large{\insertauthor}\\[1.2ex]
-        }
-        \usebeamercolor{institute in headline}{%
-            \color{fg}\large{\insertinstitute}
-        }
-        \vskip2ex
-    \end{beamercolorbox}
-}
-\setbeamertemplate{footline}{%
-    \begin{beamercolorbox}[wd=\paperwidth,ht=11ex]{footline}
-    \leavevmode%
-    \begin{columns}[T]
-        \begin{column}{0.7\paperwidth}
-        \end{column}
-        \begin{column}{0.3\paperwidth}
-            \usebeamercolor{conference in headline}{%
-                \color{fg}\large{\FJNKT98@footertext}
-            }
-        \end{column}
-    \end{columns}
-    \vskip3ex
-    \end{beamercolorbox}
-}
+
+
+
+\setbeamercolor*{normal text}{fg=black,bg=white}
+\setbeamercolor{structure}{fg=blue}
+\setbeamercolor{alert}{fg=red}
+
+
+
+
+% フッターの余計な記号を消す
+\setbeamertemplate{navigation symbols}{}
+
