@@ -8,6 +8,8 @@
 \definecolor{fjndarkgray}{RGB}{75, 84, 88}
 \definecolor{fjnmiddlegray}{RGB}{123, 142, 152}
 \definecolor{fjnlightgray}{RGB}{252, 252, 252}
+\definecolor{winered}{RGB}{128, 39, 63}
+\definecolor{palered}{RGB}{255, 250, 250}
 
 % ===== Font Configuration ============================
 
@@ -52,10 +54,12 @@
 % ---- Block ----
 
 % --- Normal Block ---
-\setbeamercolor*{block body}{fg=black,bg=fjnlightgray}
-\setbeamercolor*{block title}{fg=white,bg=fjndarkgray}
+\setbeamercolor{block body}{fg=black,bg=fjnlightgray} % 文字色：黒，背景：薄灰色
+\setbeamercolor{block title}{fg=white,bg=fjndarkgray} % 文字色：白，背景：濃灰色
+\setbeamercolor{block separator}{}  % セパレータの色は指定しない
 
-\setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamerfont{block title}{size=\large,series=\bf} % タイトルのフォントを指定
+
 \setbeamertemplate{block begin}{
   \vskip.5ex
   % タイトルの枠設定
@@ -86,6 +90,12 @@
 }
 
 % -- Alert Block --
+\setbeamercolor{block alerted body}{fg=black,bg=palered} % 文字色：黒，背景：薄灰色
+\setbeamercolor{block alerted title}{fg=white,bg=winered} % 文字色：白，背景：濃灰色
+\setbeamercolor{block alerted separator}{}  % セパレータの色は指定しない
+
+\setbeamerfont{block alerted title}{size=\large,series=\bf} % タイトルのフォントを指定
+
 \setbeamertemplate{block alerted begin}{
   \vskip.5ex
   % タイトルの枠設定
@@ -94,8 +104,8 @@
     shadow=false,   % 影は付けない
     leftskip=1em,   % 左側の余白の設定
     colsep*=.75ex   % 枠間の余白の設定
-  ]{block title}
-    \usebeamerfont*{block alerted title}\insertblocktitle % タイトル挿入
+  ]{block alerted title}
+    \usebeamerfont*{block title}\insertblocktitle % タイトル挿入
   \end{beamercolorbox}
 
   % 本文の枠設定
