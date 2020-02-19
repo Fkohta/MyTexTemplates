@@ -1,9 +1,5 @@
 \ProvidesPackage{beamerthemeFJNKT98}
 \mode<presentation>
-\DeclareOptionBeamer{footertext}{\def\FJNKT98@footertext{#1}}
-\ProcessOptionsBeamer
-
-
 
 % ===== Color Configuration ===========================
 \selectcolormodel{RGB}
@@ -27,81 +23,107 @@
 \setbeamercolor{institute in headline}{fg=white}
 \setbeamercolor{conference in headline}{fg=white}
 
-\setbeamertemplate{headline}{%
-    \leavevmode
-    \begin{beamercolorbox}[wd=\paperwidth]{headline}
-        \centering
-        \vskip5ex
-        \usebeamercolor{title in headline}{%
-            \color{fg}\textbf{\LARGE{\inserttitle}}\\[2.5ex]
-        }
-        \usebeamercolor{author in headline}{%
-            \color{fg}\large{\insertauthor}\\[1.2ex]
-        }
-        \usebeamercolor{institute in headline}{%
-            \color{fg}\large{\insertinstitute}
-        }
-        \vskip5ex
-    \end{beamercolorbox}
+\setbeamertemplate{headline}{
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{center}
+      \vskip5ex
+    \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[2.5ex]}
+    \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1.2ex]}
+    \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}}
+    \vskip5ex
+    \end{center}
+  \end{beamercolorbox}
 }
 
 % ---- Footer ----
 \setbeamercolor{footline}{fg=white,bg=fjndarkgray}
 
-\setbeamertemplate{footline}{%
-    \begin{beamercolorbox}[wd=\paperwidth,ht=11ex]{footline}
-    \leavevmode%
-    \begin{columns}[T]
-        \begin{column}{0.7\paperwidth}
-        \end{column}
-        \begin{column}{0.3\paperwidth}
-            \usebeamercolor{conference in headline}{%
-                \color{fg}\large{\FJNKT98@footertext}
-            }
-        \end{column}
-    \end{columns}
+\setbeamertemplate{footline}{
+  \leavevmode
+  \begin{beamercolorbox}[wd=\paperwidth,ht=11ex]{footline}
     \vskip3ex
-    \end{beamercolorbox}
+  \end{beamercolorbox}
 }
 
 % ===== Inner Configuration ===========================
 
 % ---- Block ----
+
+% --- Normal Block ---
 \setbeamercolor*{block body}{fg=black,bg=fjnlightgray}
 \setbeamercolor*{block title}{fg=white,bg=fjndarkgray}
 
 \setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamertemplate{block begin}{
+  \vskip.5ex
+  % タイトルの枠設定
+  \begin{beamercolorbox}[
+    rounded=false,  % 外枠を丸めない
+    shadow=false,   % 影は付けない
+    leftskip=1em,   % 左側の余白の設定
+    colsep*=.75ex   % 枠間の余白の設定
+  ]{block title}
+    \usebeamerfont*{block title}\insertblocktitle % タイトル挿入
+  \end{beamercolorbox}
 
-\setbeamertemplate{block begin}{%
-    \vskip.5ex
-    \begin{beamercolorbox}[
-        rounded=true,
-        shadow=true,
-        leftskip=1em,
-        colsep*=.75ex]{block title}%
-        \usebeamerfont*{block title}\insertblocktitle
-    \end{beamercolorbox}%
-    \usebeamerfont{block body}%
-    \begin{beamercolorbox}[
-        rounded=true,
-        shadow=true,
-        leftskip=1em,
-        rightskip=1em,
-        colsep*=.75ex,
-        sep=1ex,
-        vmode]{block body}%
+  % 本文の枠設定
+  \usebeamerfont{block body}
+  \begin{beamercolorbox}[
+      rounded=false,  % 外枠を丸めない
+      shadow=false,   % 影は付けない
+      leftskip=1em,   % 左側余白
+      rightskip=1em,  % 右側余白
+      colsep*=.75ex,  % ボックスの水平方向の外側にあるテキストの周りに追加の色分離スペースを設定
+      sep=1ex,        % パディング
+      vmode           % box開始時に垂直モードになる
+  ]{block body}
 }
-\setbeamertemplate{block end}{%
-    \end{beamercolorbox}
-    \vskip1.5ex
+\setbeamertemplate{block end}{
+  \end{beamercolorbox}
+  \vskip1.5ex
 }
 
+% -- Alert Block --
+\setbeamertemplate{block alerted begin}{
+  \vskip.5ex
+  % タイトルの枠設定
+  \begin{beamercolorbox}[
+    rounded=false,  % 外枠を丸めない
+    shadow=false,   % 影は付けない
+    leftskip=1em,   % 左側の余白の設定
+    colsep*=.75ex   % 枠間の余白の設定
+  ]{block title}
+    \usebeamerfont*{block alerted title}\insertblocktitle % タイトル挿入
+  \end{beamercolorbox}
+
+  % 本文の枠設定
+  \usebeamerfont{block alerted body}
+  \begin{beamercolorbox}[
+      rounded=false,  % 外枠を丸めない
+      shadow=false,   % 影は付けない
+      leftskip=1em,   % 左側余白
+      rightskip=1em,  % 右側余白
+      colsep*=.75ex,  % ボックスの水平方向の外側にあるテキストの周りに追加の色分離スペースを設定
+      sep=1ex,        % パディング
+      vmode           % box開始時に垂直モードになる
+  ]{block alerted body}
+}
+\setbeamertemplate{block alerted end}{
+  \end{beamercolorbox}
+  \vskip1.5ex
+}
+
+% ---- Itemize ----
+\useinnertheme{circles}
+
+% ---- Enumerate ----
 
 
 \setbeamercolor*{normal text}{fg=black,bg=white}
 \setbeamercolor{structure}{fg=blue}
 \setbeamercolor{alert}{fg=red}
-
 
 
 
