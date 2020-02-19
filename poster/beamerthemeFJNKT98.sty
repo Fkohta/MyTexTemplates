@@ -10,6 +10,7 @@
 \definecolor{fjnlightgray}{RGB}{252, 252, 252}
 \definecolor{winered}{RGB}{128, 39, 63}
 \definecolor{palered}{RGB}{255, 250, 250}
+\definecolor{fjnblue}{RGB}{0, 122, 205}
 
 % ===== Font Configuration ============================
 
@@ -40,8 +41,11 @@
 }
 
 % ---- Footer ----
-\setbeamercolor{footline}{fg=white,bg=fjndarkgray}
+\setbeamercolor{footline}{fg=white,bg=fjndarkgray}  % フッターの色を指定
 
+\setbeamertemplate{navigation symbols}{}  % フッターの余計な記号を消す
+
+% フッターの形式定義
 \setbeamertemplate{footline}{
   \leavevmode
   \begin{beamercolorbox}[wd=\paperwidth,ht=11ex]{footline}
@@ -49,7 +53,16 @@
   \end{beamercolorbox}
 }
 
+
+
 % ===== Inner Configuration ===========================
+
+% ---- 本文 ----
+\setbeamercolor{normal text}{fg=black,bg=white} % 通常の文字
+\setbeamercolor{structure}{fg=fjnblue}    % 強調表現その1
+\setbeamercolor{alerted text}{fg=winered} % 強調表現その2
+
+\renewcommand{\kanjifamilydefault}{\gtdefault} % 日本語をゴシック体に
 
 % ---- Block ----
 
@@ -126,17 +139,23 @@
 }
 
 % ---- Itemize ----
-\useinnertheme{circles}
+\setbeamertemplate{itemize items}[circle]     % 丸記号を使う
+\setbeamercolor{itemize item}{fg=fjndarkgray}       % 色を指定
+\setbeamercolor{itemize subitem}{fg=fjndarkgray}    % 色を指定
+\setbeamercolor{itemize subsubitem}{fg=fjndarkgray} % 色を指定
 
 % ---- Enumerate ----
+\setbeamertemplate{enumerate items}[default]  % 数字を使う
+\setbeamercolor{enumerate item}{fg=fjndarkgray}       % 色を指定
+\setbeamercolor{enumerate subitem}{fg=fjndarkgray}    % 色を指定
+\setbeamercolor{enumerate subsubitem}{fg=fjndarkgray} % 色を指定
 
+% 箇条書きのサブアイテムの文字サイズを等しくする
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
 
-\setbeamercolor*{normal text}{fg=black,bg=white}
-\setbeamercolor{structure}{fg=blue}
-\setbeamercolor{alert}{fg=red}
-
-
-
-% フッターの余計な記号を消す
-\setbeamertemplate{navigation symbols}{}
-
+% ---- Caption ----
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}[period]
+\setlength{\abovecaptionskip}{2ex}
+\setlength{\belowcaptionskip}{1ex}
