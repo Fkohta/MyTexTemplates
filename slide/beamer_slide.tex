@@ -62,6 +62,7 @@
 
   \begin{frame}
     \frametitle{箇条書き}
+    
     通常の\LaTeX と同じ箇条書き環境が使えます
     \begin{itemize}
       \item ほげ
@@ -74,6 +75,47 @@
       \item に
       \item さん
     \end{enumerate}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{箇条書き}
+
+    入れ子の箇条書きも出来る
+
+    enumerate環境でも同様
+
+    \begin{itemize}
+      \item トップレベル
+      \begin{itemize}
+        \item サブレベル
+        \begin{itemize}
+          \item サブサブレベル
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{columns環境}
+    columns環境を使うと枠を設けて並べることが出来る
+
+    \begin{columns}
+      \begin{column}{.50\linewidth}
+        \begin{block}{}
+          左
+        \end{block}
+
+        \begin{block}
+          下に並べることも出来る
+        \end{block}
+      \end{column}
+
+      \begin{column}{.50\linewidth}
+        \begin{block}{}
+          右
+        \end{block}
+      \end{column}
+    \end{columns}
   \end{frame}
 
 \end{document}
