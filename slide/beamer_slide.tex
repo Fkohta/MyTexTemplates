@@ -9,51 +9,71 @@
 \usecolortheme{rose}
 
 \title{はじめてのBeamer}
+\subtitle{LaTeXでスライドを作ろう！}
 \author{fjnkt98}
 \date{\today}
-\institute{Centre for Modern Beamer Themes}
+\institute{National Institute of Technologie, Ichinoseki College}
 
 \begin{document}
   \maketitle
 
-  \section{はじめに}
-  \begin{frame}{}
+  % 目次
+  \begin{frame}{目次}
     \tableofcontents
   \end{frame}
 
-  \begin{frame}{スライド}
-    これがBeamerスライドだ！
+  % LaTeXのセクションでスライドの章が作れる
+  \section{ブロック環境について}
+
+  \begin{frame}{ブロックのあれこれ}
+    \begin{block}{block}
+      普通のブロック
+    \end{block}
+
+    \begin{alertblock}{alertblock}
+      アラートブロック
+    \end{alertblock}
+
+    \begin{exampleblock}{exampleblock}
+      イグザンプルブロック
+    \end{exampleblock}
   \end{frame}
 
   \begin{frame}
-    \frametitle{はじめてのスライド}
+    \frametitle{ブロックではないけど似たようなやつ}
     \begin{definition}
-      1と自分自身しか約数を持たない数を\alert{素数}という．
+      definition環境．何かの定義を書くやつ．
     \end{definition}
+
     \begin{example}
-     \begin{itemize}
-      \item 2 は素数．
-      \item 3 も素数．
-      \item 4 は素数ではない．
-     \end{itemize}
+      example環境．exampleblockとは別のやつです．
     \end{example}
+
+    \begin{theorem}
+      theorem環境．定理を書くやつかな？
+    \end{theorem}
+
+    \begin{proof}
+      proof環境．証明を書くやつらしい...
+    \end{proof}
   \end{frame}
+
+  \section{箇条書きとか}
 
   \begin{frame}
     \frametitle{箇条書き}
+    通常の\LaTeX と同じ箇条書き環境が使えます
     \begin{itemize}
       \item ほげ
       \item もげ
       \item うんち！
     \end{itemize}
-    \begin{block}{ブロック}
-      これはBlockの中身です．
-    \end{block}
-  \end{frame}
 
-  \begin{frame}
-    \frametitle{ブロック}
-
+    \begin{enumerate}
+      \item いち
+      \item に
+      \item さん
+    \end{enumerate}
   \end{frame}
 
 \end{document}
