@@ -3,6 +3,7 @@
 $latex      = 'uplatex'.
               ' -file-line-error'.
               ' -halt-on-error'.
+              ' -no-guess-input-enc'.
               ' -kanji=utf8 -synctex=1'.
               ' -interaction=batchmode'.
               ' %S';
