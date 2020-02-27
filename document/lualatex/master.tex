@@ -26,6 +26,49 @@
 
 \begin{document}
   \maketitle
+
   \section{Hello, Lua\LaTeX !!!}
     Lua\LaTeX デビュー！！
+  
+  \section{図の貼り方}
+    図の貼り方はup\LaTeX の時と同じです．
+    figure環境を使うことで画像を貼ることが出来ます．
+    PDF画像の他，JPEGやPNGもそのまま貼ることが出来ます．
+    但しEPS画像はおすすめしません．時代遅れです．
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=120truemm, clip]{images/graph_sample.pdf}
+      \caption{Sample Picture}
+      \label{fig:sample}
+    \end{figure}
+
+    横に並べて画像を貼るときは，minipage環境とtabular環境を組み合わせます．
+
+    \begin{figure}[ht]
+      \begin{center}
+        \begin{tabular}{c}
+          \begin{minipage}{.45\linewidth}
+            \centering
+            \includegraphics[width=60truemm, clip]{images/graph_sample.pdf}
+            \caption{Sample Picture(Left Side)}
+            \label{fig: sample_l}
+          \end{minipage}
+
+          \begin{minipage}{.45\linewidth}
+            \centering
+            \includegraphics[width=60truemm, clip]{images/graph_sample.pdf}
+            \caption{Sample Picture(Right Side)}
+            \label{fig: sample_r}
+          \end{minipage}
+        \end{tabular}
+      \end{center}
+    \end{figure}
+  
+  \section{数式の描き方}
+    普通に\LaTeX の書き方で書けます．
+    \begin{equation}
+    {}^0\!T_{1}=\begin{pmatrix} C_{1} & -S_{1} & 0 & 0 \\ S_{1} & C_1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
+    \end{equation}
+
 \end{document}
